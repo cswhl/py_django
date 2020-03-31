@@ -10,6 +10,10 @@ class BookInfo(models.Model):
     btitle = models.CharField(max_length=20)
     bpub_date = models.DateField()
 
+    def __str__(self):
+        # 返回书名
+        return self.btitle
+
 
 class HeroInfo(models.Model):
     '''英雄类'''
@@ -17,3 +21,7 @@ class HeroInfo(models.Model):
     hgender = models.BooleanField()
     hcommtent = models.CharField(max_length=100)
     hbook = models.ForeignKey('BookInfo')
+
+    def __str__(self):
+        # 返回英雄名
+        return self.hname
